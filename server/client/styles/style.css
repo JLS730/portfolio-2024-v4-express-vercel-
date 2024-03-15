@@ -1,0 +1,773 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+}
+
+.hamburger-menu-links-container {
+  display: none;
+  background-color: rgb(15, 15, 15);
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 3;
+  left: 100%;
+}
+.hamburger-menu-links-container .hamburger-menu-exit-container {
+  width: 100%;
+  height: 3em;
+  background-color: black;
+  border-bottom: 1px solid rgb(48, 48, 48);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+.hamburger-menu-links-container .hamburger-menu-exit-container .hamburger-menu-exit-button-container {
+  height: 30px;
+  width: 30px;
+  margin-right: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.hamburger-menu-links-container .hamburger-menu-exit-container .hamburger-menu-exit-button-container .hamburger-menu-exit-button {
+  transform: rotate(45deg);
+  height: 2px;
+  width: 20px;
+  background-color: white;
+  position: absolute;
+}
+.hamburger-menu-links-container .hamburger-menu-exit-container .hamburger-menu-exit-button-container .hamburger-menu-exit-button::after {
+  content: "";
+  transform: rotate(90deg);
+  height: 2px;
+  width: 20px;
+  background-color: white;
+  position: absolute;
+}
+.hamburger-menu-links-container .hamburger-links-container {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger-menu-links-container .hamburger-links-container .hamburger-navigation-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  list-style-type: none;
+}
+.hamburger-menu-links-container .hamburger-links-container .hamburger-navigation-links li {
+  font-family: sans-serif;
+  font-size: 19px;
+}
+.hamburger-menu-links-container .hamburger-links-container .hamburger-navigation-links li a {
+  text-decoration: none;
+  color: white;
+}
+.hamburger-menu-links-container .hamburger-links-container .hamburger-navigation-links li a:hover,
+.hamburger-menu-links-container .hamburger-links-container .hamburger-navigation-links li a:active {
+  transition: 0.1s linear all;
+  color: #007afe;
+}
+
+.hamburger-menu-links-container.slide-in {
+  animation: right-to-left 0.4s ease-out forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hamburger-menu-links-container.slide-out {
+  animation: left-to-right 0.4s ease-out forwards;
+}
+
+.navigation-bar-container {
+  background-color: black;
+  width: 100%;
+}
+.navigation-bar-container .navigation-bar {
+  width: 1250px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 0;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1em;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-left img {
+  height: 25px;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-left h1 {
+  font-family: sans-serif;
+  font-size: 1.5em;
+  margin-left: 0.3em;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-right a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  transition: 0.1s all linear;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-right a li {
+  list-style: none;
+  margin-right: 3em;
+  font-family: sans-serif;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-right a:hover {
+  color: #007afe;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-right-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-right-container .navigation-hamburger-menu-container {
+  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  right: 0;
+  list-style: none;
+  margin: 0 2em;
+  height: 100%;
+  cursor: pointer;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-right-container .navigation-hamburger-menu-container .hamburger-menu {
+  height: 2px;
+  width: 20px;
+  background-color: white;
+}
+.navigation-bar-container .navigation-bar .navigation-bar-right-container .navigation-hamburger-menu-container .hamburger-menu::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: white;
+  transform: translateY(7px);
+}
+.navigation-bar-container .navigation-bar .navigation-bar-right-container .navigation-hamburger-menu-container .hamburger-menu::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 20px;
+  background-color: white;
+  transform: translateY(-7px);
+}
+
+.introduction-container {
+  height: 400px;
+  background-color: black;
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.introduction-container .introduction-name-container {
+  width: 50%;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.introduction-container .introduction-name-container .introduction-firstName {
+  position: absolute;
+  right: 280px;
+  top: 150px;
+  font-size: 3.8em;
+  font-weight: 500;
+  font-family: "Ubuntu", sans-serif;
+}
+.introduction-container .introduction-name-container .introduction-lastName {
+  position: absolute;
+  right: 90px;
+  top: 220px;
+  font-size: 3.8em;
+  font-weight: 500;
+  font-family: "Ubuntu", sans-serif;
+}
+.introduction-container img {
+  height: 350px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
+}
+.introduction-container .introduction-description-container {
+  width: 50%;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+.introduction-container .introduction-description-container .introduction-title {
+  top: 220px;
+  left: 90px;
+  width: 330px;
+  position: absolute;
+  font-family: sans-serif;
+  font-size: 1.68em;
+  color: #007afe;
+}
+.introduction-container .introduction-description-container .introduction-description {
+  top: 250px;
+  left: 90px;
+  position: absolute;
+  width: 330px;
+  text-align: justify;
+  font-family: sans-serif;
+  font-size: 1.3em;
+  color: white;
+}
+.introduction-container .introduction-description-container .introduction-call-to-action-container {
+  position: absolute;
+  left: 90px;
+  top: 370px;
+}
+.introduction-container .introduction-description-container .introduction-call-to-action-container a {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  transition: 0.1s all linear;
+}
+.introduction-container .introduction-description-container .introduction-call-to-action-container a:not(:first-of-type) {
+  margin-left: 0.5em;
+}
+.introduction-container .introduction-description-container .introduction-call-to-action-container a:hover {
+  color: #007afe;
+}
+
+.skills-container {
+  background-color: black;
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 3em 0;
+  color: white;
+}
+.skills-container .skills-title {
+  font-size: 2em;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 1em;
+  color: #007afe;
+  padding: 1em 0 1.5em 0;
+}
+.skills-container .frontend-skills-container .frontend-skills-title {
+  font-size: 1.5em;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 1.5em;
+  padding: 0.5em 1em;
+  text-decoration: underline;
+  text-decoration-color: #007afe;
+}
+.skills-container .frontend-skills-container .skills-containers {
+  display: flex;
+  gap: 1em 2em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2em;
+}
+.skills-container .frontend-skills-container .skills-containers div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+}
+.skills-container .frontend-skills-container .skills-containers div h3 {
+  margin-bottom: 0.5em;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+.skills-container .frontend-skills-container .skills-containers div img {
+  height: 40px;
+}
+.skills-container .backend-skills-container {
+  padding: 0.8em 0;
+}
+.skills-container .backend-skills-container .backend-skills-title {
+  font-size: 1.5em;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 1.5em;
+  padding: 0.5em 1em;
+  text-decoration: underline;
+  text-decoration-color: #007afe;
+}
+.skills-container .backend-skills-container .skills-containers {
+  display: flex;
+  gap: 1em 2em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1em;
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.skills-container .backend-skills-container .skills-containers div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+}
+.skills-container .backend-skills-container .skills-containers div h3 {
+  margin-bottom: 0.5em;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+.skills-container .backend-skills-container .skills-containers div img {
+  height: 40px;
+}
+.skills-container .other-skills-container .other-skills-title {
+  font-size: 1.5em;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 1.5em;
+  padding: 0.5em 1em;
+  text-decoration: underline;
+  text-decoration-color: #007afe;
+}
+.skills-container .other-skills-container .skills-containers {
+  display: flex;
+  gap: 1em 2em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1em;
+  width: 400px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.skills-container .other-skills-container .skills-containers div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+}
+.skills-container .other-skills-container .skills-containers div h3 {
+  margin-bottom: 0.5em;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+.skills-container .other-skills-container .skills-containers div img {
+  height: 40px;
+}
+
+.projects-section {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  padding: 5em 0 3em 0;
+}
+.projects-section .projects-section-header {
+  font-size: 2em;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 1em;
+  color: #007afe;
+  padding: 1em 0 1.5em 0;
+  align-self: flex-start;
+}
+.projects-section .project-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em 0;
+  padding: 0 0.5em;
+  z-index: 2;
+}
+.projects-section .project-cards .project-container-left {
+  padding-right: 3em;
+  padding-left: 0.5em;
+  height: 100%;
+}
+.projects-section .project-cards .project-container-left .project-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 50%;
+  background-color: bisque;
+}
+.projects-section .project-cards .project-container-left .project-image-container img {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  height: 200px;
+}
+.projects-section .project-cards .project-container-right {
+  padding: 0 0.5em;
+}
+.projects-section .project-cards .project-container-right .project-description-container .project-title {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.6em;
+  padding: 0.8em 0;
+  color: white;
+}
+.projects-section .project-cards .project-container-right .project-description-container .project-description {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1em;
+  padding: 0.8em 0;
+  text-align: justify;
+  line-height: 1.4;
+  color: white;
+}
+.projects-section .project-cards .project-container-right .project-description-container .project-email-container {
+  background-color: rgb(236, 236, 236);
+  border: 3px solid #fc9074;
+  padding: 0.8em;
+  font-family: "Work Sans", sans-serif;
+  font-style: italic;
+  width: 56%;
+  min-width: 328px;
+}
+.projects-section .project-cards .project-container-right .project-description-container .project-email-container .project-emails {
+  padding-bottom: 0.4em;
+  font-size: 0.8em;
+}
+.projects-section .project-cards .project-container-right .project-description-container .project-email-container .project-password {
+  padding-bottom: 0.4em;
+  font-size: 0.8em;
+}
+.projects-section .project-cards .project-container-right .project-description-container .project-call-to-action-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1em 0;
+  font-family: "Work Sans", sans-serif;
+  list-style: none;
+}
+.projects-section .project-cards .project-container-right .project-description-container .project-call-to-action-container .project-links,
+.projects-section .project-cards .project-container-right .project-description-container .project-call-to-action-container a {
+  text-decoration: none;
+  font-size: 1.05em;
+  color: #007afe;
+  transition: 0.1s all linear;
+}
+.projects-section .project-cards .project-container-right .project-description-container .project-call-to-action-container .project-links,
+.projects-section .project-cards .project-container-right .project-description-container .project-call-to-action-container a:hover {
+  color: white;
+}
+.projects-section .project-cards .project-container-right .project-description-container .project-call-to-action-container .project-link-github {
+  margin-left: 1.5em;
+}
+
+.about-me-section {
+  width: 1200px;
+  max-width: 100%;
+  background-color: black;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3em;
+}
+.about-me-section .about-me-section-header {
+  font-size: 2em;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 1em;
+  color: #007afe;
+  align-self: flex-start;
+}
+.about-me-section .about-me-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+}
+.about-me-section .about-me-container .about-me-image {
+  height: 550px;
+  position: absolute;
+  opacity: 0.4;
+  z-index: 1;
+}
+.about-me-section .about-me-container .about-me-container-right {
+  width: 90%;
+}
+.about-me-section .about-me-container .about-me-container-right .about-me-description {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.3em;
+  line-height: 1.8;
+  text-align: justify;
+  color: white;
+  z-index: 2;
+}
+
+.contact-section {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+.contact-section .contact-section-header {
+  font-size: 2em;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 1em;
+  color: #007afe;
+  padding-bottom: 1.5em;
+  align-self: flex-start;
+}
+.contact-section .contact-form-container {
+  height: 75%;
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3em 0;
+}
+.contact-section .contact-form-container .contact {
+  height: 100%;
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contact-section .contact-form-container .contact .contact-form {
+  height: 100%;
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-section .contact-form-container .contact .contact-form .contact-email {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contact-section .contact-form-container .contact .contact-form .contact-email .email-input {
+  width: 100%;
+  font-size: 1em;
+  padding: 0.3em 0.2em;
+  border: 1px solid rgb(48, 48, 48);
+  background-color: rgb(247, 251, 255);
+}
+.contact-section .contact-form-container .contact .contact-form .contact-email .email-input:focus {
+  outline: none;
+}
+.contact-section .contact-form-container .contact .contact-form .contact-subject {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1em;
+}
+.contact-section .contact-form-container .contact .contact-form .contact-subject .subject-input {
+  padding: 0.3em 0.2em;
+  width: 100%;
+  font-size: 1em;
+  border: 1px solid rgb(48, 48, 48);
+  background-color: rgb(247, 251, 255);
+}
+.contact-section .contact-form-container .contact .contact-form .contact-subject .subject-input:focus {
+  outline: none;
+}
+.contact-section .contact-form-container .contact .contact-form .contact-information {
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 1em;
+  padding: 0.3em 0.2em;
+  border: 1px solid rgb(48, 48, 48);
+  margin-top: 1em;
+  background-color: rgb(247, 251, 255);
+}
+.contact-section .contact-form-container .contact .contact-form .contact-information:focus {
+  outline: none;
+}
+.contact-section .contact-form-container .contact .contact-form .contact-submit-button {
+  width: 300px;
+  padding: 0.5em;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  border: 1px solid rgb(48, 48, 48);
+  background-color: rgb(247, 251, 255);
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .introduction-container {
+    flex-direction: column;
+    height: 700px;
+  }
+  .introduction-container .introduction-name-container {
+    width: 100%;
+    text-align: center;
+    height: 50%;
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+  .introduction-container .introduction-name-container .introduction-firstName {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 110px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .introduction-container .introduction-name-container .introduction-lastName {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 180px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .introduction-container .introduction-description-container {
+    width: 100%;
+  }
+  .introduction-container .introduction-description-container .introduction-title {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .introduction-container .introduction-description-container .introduction-description {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .introduction-container .introduction-description-container .introduction-call-to-action-container {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .skills-title {
+    text-align: center;
+    margin-left: 0 !important;
+    padding-top: 0 !important;
+  }
+  .frontend-skills-title {
+    text-align: center;
+    padding: 2em 0 !important;
+    margin-left: 0 !important;
+  }
+  .backend-skills-title {
+    text-align: center;
+    padding: 2em 0 !important;
+    margin-left: 0 !important;
+  }
+  .other-skills-title {
+    text-align: center;
+    padding: 2em 0 !important;
+    margin-left: 0 !important;
+  }
+  .project-description-container {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+  .project-cards {
+    flex-direction: column;
+  }
+  .project-cards .project-container-left {
+    padding: 0 !important;
+  }
+  .project-cards .project-container-left img {
+    height: 170px !important;
+  }
+  .project-cards .project-container-right {
+    padding: 0 !important;
+  }
+  .project-cards .project-container-right .project-title {
+    text-align: center !important;
+  }
+  .project-cards .project-container-right .project-description-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .projects-section-header {
+    align-self: center !important;
+    margin-left: 0 !important;
+  }
+  .about-me-section-header {
+    align-self: center !important;
+    margin-left: 0 !important;
+  }
+  .contact-section-header {
+    align-self: center !important;
+    margin-left: 0 !important;
+  }
+}
+@media (max-width: 850px) {
+  html {
+    overflow-x: hidden;
+  }
+  .navigation-bar-right {
+    display: none !important;
+  }
+  .navigation-bar-right-container {
+    display: flex !important;
+  }
+}
+@media (max-width: 630px) {
+  .projects-section-header {
+    align-self: center !important;
+    padding-top: 0 !important;
+    font-size: 1.9em !important;
+  }
+}
+@keyframes right-to-left {
+  100% {
+    left: 0%;
+  }
+}
+@keyframes left-to-right {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
